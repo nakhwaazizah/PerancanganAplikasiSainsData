@@ -6,20 +6,15 @@ url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/Preprocessing
 Data = pd.read_csv(url)
 
 with st.sidebar:
-      Category = st.selectbox(
-      'Primary Category', Data['primary_category'].unique())
+      Category = st.selectbox('Primary Category', Data['primary_category'].unique())
       
-      Category2 = st.selectbox(
-      'second_category', Data['second_category'].unique())
+      Category2 = st.selectbox('Secondary Category', Data['secondary_category'].unique())
       
-      Skin = st.selectbox(
-      'skin_tone', Data['skin_tone'].unique())
+      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       
-      Type = st.selectbox(
-      'skin_type', Data['skin_type'].unique())
+      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-      Eye = st.selectbox(
-      'eye_color', Data['eye_color'].unique())
+      Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
 
       st.write('Primary Category:', Category)
       st.write('Secondary Category:', Category2)

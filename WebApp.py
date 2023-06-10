@@ -1,6 +1,6 @@
 import streamlit as st 
 import pandas as pd 
-import numpy as np
+import numpy as np 
 
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)

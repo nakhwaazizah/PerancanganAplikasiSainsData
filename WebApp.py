@@ -7,19 +7,19 @@ Data = pd.read_csv(url)
 
 with st.sidebar:
       Category = st.selectbox(
-      'Primary Category', Data['primary_category'].unique)
+      'Primary Category', Data['primary_category'].unique())
       
       Category2 = st.selectbox(
-      'second_category', Data['second_category'].unique)
+      'second_category', Data['second_category'].unique())
       
       Skin = st.selectbox(
-      'skin_tone', Data['skin_tone'].unique)
+      'skin_tone', Data['skin_tone'].unique())
       
       Type = st.selectbox(
-      'skin_type', Data['skin_type'].unique)
+      'skin_type', Data['skin_type'].unique())
       
       Eye = st.selectbox(
-      'eye_color', Data['eye_color'].unique)
+      'eye_color', Data['eye_color'].unique())
 
       st.write('Primary Category:', Category)
       st.write('Secondary Category:', Category2)

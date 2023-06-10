@@ -6,15 +6,6 @@ import plotly.express as px
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
 
-def main():
-    # Halaman Utama (Home)
-    st.title("Beauty Things")
-    st.write("Let's find skincare for you!")
-
-
-if __name__ == "__main__":
-    main()
-
 with st.sidebar:
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       

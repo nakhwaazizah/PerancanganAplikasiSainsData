@@ -7,7 +7,7 @@ Data = pd.read_csv(url)
 
 with st.sidebar:
       Category = st.selectbox(
-      'Pilih Kategori'/n'Primary Category',
+      'Primary Category',
       (Data['primary_category'].unique))
       
       Category2 = st.selectbox(

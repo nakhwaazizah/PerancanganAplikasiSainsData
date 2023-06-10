@@ -8,14 +8,8 @@ Data = pd.read_csv(url)
 def main():
     # Halaman Utama (Home)
     st.title("Beauty Things")
-    st.write("Hello Beauty!")
-    st.write("Silakan ke halaman dasbor untuk melihat lebih banyak informasi.")
+    st.write("Let's find skincare for you!")
 
-    # Halaman Dasbor (Dashboard)
-    if st.button("Halaman Dasbor"):
-        st.title("Dasbor")
-        st.write("Ini adalah halaman dasbor.")
-        # Tambahkan kode tambahan untuk menampilkan informasi lebih lanjut di dasbor
 
 if __name__ == "__main__":
     main()

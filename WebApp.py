@@ -5,10 +5,23 @@ import numpy as np
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
 
+def main():
+    # Halaman Utama (Home)
+    st.title("Beauty Things")
+    st.write("Hello Beauty!")
+    st.write("Silakan ke halaman dasbor untuk melihat lebih banyak informasi.")
+
+    # Halaman Dasbor (Dashboard)
+    if st.button("Halaman Dasbor"):
+        st.title("Dasbor")
+        st.write("Ini adalah halaman dasbor.")
+        # Tambahkan kode tambahan untuk menampilkan informasi lebih lanjut di dasbor
+
+if __name__ == "__main__":
+    main()
+
 with st.sidebar:
-      Category = st.selectbox('Primary Category', Data['primary_category'].unique())
-      
-      Category2 = st.selectbox('Secondary Category', Data['secondary_category'].unique())
+      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       
       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       
@@ -16,8 +29,3 @@ with st.sidebar:
       
       Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
 
-      st.write('Primary Category:', Category)
-      st.write('Secondary Category:', Category2)
-      st.write('Skin Tone:', Skin)
-      st.write('Skin Type:', Type)
-      st.write('Eye Color:', Eye)

@@ -38,14 +38,6 @@ def clean_text(text):
     text = ' '.join(word for word in text.split() if word not in stopworda) # hapus stopword dari kolom deskripsi
     return text
   
-def recommendations(name, cos_sim = cos_sim):
-    recommendedProducts = []
-    idx =indices[indices == name].index[0]
-    score = pd.Series(cos_sim[idx]).sort_values(ascending = False)
-    top_10 = list(score.iloc[1:11].index)
-    for i in top_10:
-        recommendedProducts.append(list(data.index)[i])
-    return recommendedProducts
   
 def main():
     st.title("Beauty Things")
@@ -78,19 +70,19 @@ def main():
     tf = TfidfVectorizer(analyzer='word', ngram_range=(1, 3), min_df=0, stop_words='english')
     tfidf_matrix = tf.fit_transform(Data['review_clean'])
     cos_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
-    cos_sim
     
     indices = pd.Series(Data.index)
     
-    recommendations(Product)
+    def recommendations(name, cos_sim = cos_sim):
+        recommendedProducts = []
+        idx =indices[indices == name].index[0]
+        score = pd.Series(cos_sim[idx]).sort_values(ascending = False)
+        top_10 = list(score.iloc[1:11].index)
+        for i in top_10:
+            recommendedProducts.append(list(data.index)[i])
+        return recommendedProducts
     
-#      filtered_data = (Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)])
-#     if len(filtered_data) > 0:
-#         st.write("Hasil Pencarian:")
-#         st.write(filtered_data.iloc[0]['product_name'])
-#         st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text'][0]])
-#     else:
-#         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
+    recommendations(Product)  
             
 
 if __name__ == "__main__":

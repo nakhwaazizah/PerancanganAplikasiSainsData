@@ -54,7 +54,8 @@ def main():
     filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)][0]
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
-        st.write(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
+        st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
+        st.write(filtered_data[0])
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
             

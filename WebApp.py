@@ -51,7 +51,7 @@ def main():
     plt.tight_layout()
     st.pyplot(fig)
     
-    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)][0]
+    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
         st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])

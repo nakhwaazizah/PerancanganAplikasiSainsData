@@ -8,21 +8,29 @@ from sklearn.metrics.pairwise import linear_kernel
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
 
-def Category(Data,n):
-      col1,col2,col3,col4 = st.columns(4)
-    
-    with col1:
-            kategori = st.selectbox('Product Category', Data['secondary_category'].unique())
-    
-    with col2:
-            skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique())
+      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       
-    with col3:
-            type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
+      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
+      
+      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
+      
+      Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
+        
+# def Category(Data,n):
+#       col1,col2,col3,col4 = st.columns(4)
     
-    with col4:
-            eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())
-    return Data,n
+#     with col1:
+#             kategori = st.selectbox('Product Category', Data['secondary_category'].unique())
+    
+#     with col2:
+#             skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique())
+      
+#     with col3:
+#             type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
+    
+#     with col4:
+#             eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())
+#     return Data,n
     
 #     if item != 'all':
 #         df = df.loc[df.item == int(item)]
@@ -52,10 +60,6 @@ def main():
     # Halaman Utama (Home)
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
-
-    Data = read_File()
-    n=0
-    Data,n = Category(Data,n)
 
 if __name__ == "__main__":
     main()

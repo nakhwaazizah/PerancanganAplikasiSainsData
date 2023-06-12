@@ -28,21 +28,24 @@ with st.sidebar:
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
     
- # Count the number of products in each category
+# Count the number of products in each category
 category_counts = Data['primary_category'].value_counts()
 
-      # Create a color map for each category
+# Create a color map for each category
 colors = plt.cm.get_cmap('tab20c', len(category_counts))
 
-      # Create the bubble chart
-plt.figure(figsize=(10, 6))
-plt.scatter(category_counts.index, category_counts.values, s=category_counts.values*10, c=colors(range(len(category_counts))), alpha=0.7)
-plt.xlabel('Category')
-plt.ylabel('Count')
-plt.title('Number of Products in Each Category (Bubble Chart)')
-plt.xticks(rotation=45)
+# Create the bubble chart
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.scatter(category_counts.index, category_counts.values, s=category_counts.values*10, c=colors(range(len(category_counts))), alpha=0.7)
+ax.set_xlabel('Category')
+ax.set_ylabel('Count')
+ax.set_title('Number of Products in Each Category (Bubble Chart)')
+ax.set_xticks(category_counts.index)
+ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
-plt.show()
+
+# Display the plot in Streamlit
+st.pyplot(fig)
 
       
 # Dashboard

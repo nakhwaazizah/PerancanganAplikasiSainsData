@@ -62,9 +62,9 @@ def main():
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
     # Jika ada produk yang cocok dengan pilihan pengguna
-    if not filtered_data.empty:
+#     if not filtered_data.empty:
     # Define TF-IDF vectorizer
-        vectorizer = TfidfVectorizer()
+#         vectorizer = TfidfVectorizer()
 
     # Apply TF-IDF vectorizer to review text
         tfidf_matrix = vectorizer.fit_transform(filtered_data['review_text'])

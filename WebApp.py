@@ -45,7 +45,7 @@ ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
 
 # Display the plot in Streamlit
-st.pyplot(fig)
+
 
       
 # Dashboard
@@ -59,6 +59,7 @@ def main():
         st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
+    st.pyplot(fig)
             
 
 if __name__ == "__main__":

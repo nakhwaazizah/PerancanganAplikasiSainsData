@@ -13,7 +13,7 @@ def Category(Data,n):
             kategori = st.selectbox('Product Category', Data['secondary_category'].unique())
     
     with col2:
-            skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique()))
+            skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique())
       
     with col3:
             Type = st.selectbox('Your Skin Type', Data['skin_type'].unique())

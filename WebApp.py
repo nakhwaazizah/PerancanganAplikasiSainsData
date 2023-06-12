@@ -19,17 +19,14 @@ filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone
 
 # Dashboard
 def main():
-    # Halaman Utama (Home)
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
 
     if len(filtered_data) > 0:
-            st.write("Hasil Pencarian:")
-            st.table(filtered_data[['product_name', 'brand', 'description']])
-      else:
-            st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
+        st.write("Hasil Pencarian:")
+        st.table(filtered_data[['product_name', 'brand', 'description']])
+    else:
+        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
 
 if __name__ == "__main__":
     main()
-
-

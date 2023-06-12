@@ -56,7 +56,7 @@ def main():
 #     filtered_data = Data.loc[Data.skin_tone] == Skin
 #     filtered_data = Data.loc[Data.skin_type] == Type
     
-    filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
+    filtered_data = (Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)])
     
 #     filtered_data
     if len(filtered_data) > 0:

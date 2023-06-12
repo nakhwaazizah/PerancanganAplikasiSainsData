@@ -32,20 +32,20 @@ def main():
     st.write("Let's find skincare for you!")
     filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
 
-# Jika ada produk yang cocok dengan pilihan pengguna
-if not filtered_data.empty:
-    # Define TF-IDF vectorizer
-    vectorizer = TfidfVectorizer()
+# # Jika ada produk yang cocok dengan pilihan pengguna
+# if not filtered_data.empty:
+#     # Define TF-IDF vectorizer
+#     vectorizer = TfidfVectorizer()
 
-    # Apply TF-IDF vectorizer to review text
-    tfidf_matrix = vectorizer.fit_transform(filtered_data['review_text'])
+#     # Apply TF-IDF vectorizer to review text
+#     tfidf_matrix = vectorizer.fit_transform(filtered_data['review_text'])
 
-    # Calculate cosine similarity matrix
-    cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix)
+#     # Calculate cosine similarity matrix
+#     cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-    # Get product names and indices
-    product_names = filtered_data['product_name']
-    indices = pd.Series(filtered_data.index, index=filtered_data['product_name'])
+#     # Get product names and indices
+#     product_names = filtered_data['product_name']
+#     indices = pd.Series(filtered_data.index, index=filtered_data['product_name'])
 
     product_name = get_top_similar_product(product_name)
 

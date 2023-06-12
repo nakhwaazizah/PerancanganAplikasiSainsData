@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import linear_kernel
 import matplotlib.pyplot as plt
 import joblib
 
-url = https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv
+url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
 
 title = "Beauty Things"

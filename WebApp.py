@@ -14,6 +14,8 @@ with st.sidebar:
       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
+      
+filtered_data = data[(data['secondary_category'] == category) & (data['skin_tone'] == skin_tone) & (data['skin_type'] == skin_type)]
 
 
 # # Function to get top 5 similar products
@@ -30,28 +32,27 @@ def main():
     # Halaman Utama (Home)
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
-filtered_data = data[(data['secondary_category'] == category) & (data['skin_tone'] == skin_tone) & (data['skin_type'] == skin_type)]
+ 
+# # # Jika ada produk yang cocok dengan pilihan pengguna
+# if not filtered_data.empty:
+#     # Define TF-IDF vectorizer
+#     vectorizer = TfidfVectorizer()
 
-# # Jika ada produk yang cocok dengan pilihan pengguna
-if not filtered_data.empty:
-    # Define TF-IDF vectorizer
-    vectorizer = TfidfVectorizer()
+#     # Apply TF-IDF vectorizer to review text
+#     tfidf_matrix = vectorizer.fit_transform(filtered_data['review_text'])
 
-    # Apply TF-IDF vectorizer to review text
-    tfidf_matrix = vectorizer.fit_transform(filtered_data['review_text'])
+#     # Calculate cosine similarity matrix
+#     cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix)
 
-    # Calculate cosine similarity matrix
-    cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix)
+#     # Get product names and indices
+#     product_names = filtered_data['product_name']
+#     indices = pd.Series(filtered_data.index, index=filtered_data['product_name'])
 
-    # Get product names and indices
-    product_names = filtered_data['product_name']
-    indices = pd.Series(filtered_data.index, index=filtered_data['product_name'])
-
-if len(filtered_data) > 0:
-    st.write("Hasil Pencarian:")
-    st.table(filtered_data[['product_name', 'brand', 'description']])
-else:
-    st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
+    if len(filtered_data) > 0:
+            st.write("Hasil Pencarian:")
+            st.table(filtered_data[['product_name', 'brand', 'description']])
+      else:
+            st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
 
 #     product_name = get_top_similar_product(product_name)
 

@@ -21,7 +21,7 @@ def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
     
-    filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
+    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
         st.table(filtered_data[['product_name', 'brand', 'description']])

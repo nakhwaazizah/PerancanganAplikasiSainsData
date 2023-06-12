@@ -33,7 +33,7 @@ ax.set_title('Number of Products in Each Category (Bubble Chart)')
 ax.set_xticks(category_counts.index)
 ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
-bubble chart = st.pyplot(fig)
+bubblechart = st.pyplot(fig)
       
 st.sidebar.header("Select the option :")
 

@@ -51,11 +51,11 @@ def main():
     plt.tight_layout()
     st.pyplot(fig)
     
-    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
+    filtered_data = Data[(Data['secondary_category'][0] == Category) & (Data['skin_tone'][0] == Skin) & (Data['skin_type'][0] == Type)]
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
-        st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
-        st.write(filtered_data[0])
+        st.write(filtered_data[['product_name']])
+        st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text']])
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
             

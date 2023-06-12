@@ -7,8 +7,10 @@ from sklearn.metrics.pairwise import linear_kernel
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/Results%20dataset%20Sephora.csv'
 Data = pd.read_csv(url)
 
+a= st.title("Beauty Things")
+
 with st.sidebar:
-      st.['helo']
+      st.[a]
                    
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       

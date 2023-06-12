@@ -12,8 +12,6 @@ Data = pd.read_csv(url)
 title = "Beauty Things"
 subtitle = "Let's find skincare for you!"
 
-subtitle = 'Buble Chart Number of products per category visualization'
-
 st.set_page_config(page_title = title,
                    page_icon = None,
                    layout = "wide")
@@ -35,7 +33,7 @@ ax.set_title('Number of Products in Each Category (Bubble Chart)')
 ax.set_xticks(category_counts.index)
 ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
-st.pyplot(fig)
+# st.pyplot(fig)
       
 st.sidebar.header("Select the option :")
 
@@ -50,6 +48,7 @@ with st.sidebar:
 def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
+    st.pyplot(fig)
     
     filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:

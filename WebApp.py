@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import re 
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
-
+import nltkmode
 
 clean_spcl = re.compile('[/(){}\[\]\|@,;]')
 clean_symbol = re.compile('[^0-9a-z #+_]')

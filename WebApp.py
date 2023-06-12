@@ -54,7 +54,7 @@ def main():
     filtered_data = Data.loc[Data.secondary_category] == Category
     filtered_data = Data.loc[Data.skin_tone] == Skin
     filtered_data = Data.loc[Data.skin_type] == Type
-    st.write(Data)
+    st.dataframe(Data)
     filtered_data
 #     if len(filtered_data) > 0:
 #         st.write("Hasil Pencarian:")

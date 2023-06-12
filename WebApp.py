@@ -44,9 +44,6 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-col1 = st.columns(1)
-col1.subheader('visualization')
-
       
 # Dashboard
 def main():

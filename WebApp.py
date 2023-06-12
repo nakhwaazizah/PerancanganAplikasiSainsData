@@ -29,6 +29,7 @@ with st.sidebar:
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
+      
 # Dashboard
 def main():
     st.title("Beauty Things")
@@ -50,21 +51,23 @@ def main():
     ax.set_xticklabels(category_counts.index, rotation=45)
     plt.tight_layout()
     st.pyplot(fig)
+
+    filtered_data = Data.loc[Data.secondary_category == Category]
+    filtered_data = filtered_data.loc[filtered_data.skin_tone == Skin]
+    filtered_data = filtered_data.loc[filtered_data.skin_type == Type]
     
-#     st.dataframe(Data)
-#     filtered_data = Data.loc[Data.secondary_category] == Category
-#     filtered_data = Data.loc[Data.skin_tone] == Skin
-#     filtered_data = Data.loc[Data.skin_type] == Type
+    Product = st.selectbox('Product Name', filtered_data['product_name'].unique())
+    st.write(Product)
     
-    filtered_data = (Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)])
+# #     filtered_data = (Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)])
     
-#     filtered_data
-    if len(filtered_data) > 0:
-        st.write("Hasil Pencarian:")
-        st.write(filtered_data.iloc[0]['product_name'])
-        st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text'][0]])
-    else:
-        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
+# #     filtered_data
+#     if len(filtered_data) > 0:
+#         st.write("Hasil Pencarian:")
+#         st.write(filtered_data.iloc[0]['product_name'])
+#         st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text'][0]])
+#     else:
+#         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
             
 
 if __name__ == "__main__":

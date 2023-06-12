@@ -7,14 +7,6 @@ from sklearn.metrics.pairwise import linear_kernel
 
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
-
-      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
-      
-      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
-      
-      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
-      
-      Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
         
 # def Category(Data,n):
 #       col1,col2,col3,col4 = st.columns(4)
@@ -42,14 +34,14 @@ Data = pd.read_csv(url)
    
 #     return df, n
 
-# with st.sidebar:
-#       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
+with st.sidebar:
+      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       
-#       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
+      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       
-#       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
+      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-#       Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
+      Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
         
         
 # fig = px.scatter(data_frame=Data,x=Category, y=Skin, size =Type,Eye=Color,log_x=True,log_y=True,size_max=Circle_area)

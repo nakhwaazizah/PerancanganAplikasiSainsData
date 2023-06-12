@@ -18,22 +18,6 @@ st.set_page_config(page_title = title,
 
 # st.title(title)
 # st.caption(subtitle)
-
-# # Bar Chart
-# category_counts = Data['primary_category'].value_counts()
-
-# colors = plt.cm.get_cmap('tab20c', len(category_counts))
-
-# # Create the bubble chart
-# fig, ax = plt.subplots(figsize=(10, 6))
-# ax.scatter(category_counts.index, category_counts.values, s=category_counts.values*10, c=colors(range(len(category_counts))), alpha=0.7)
-# ax.set_xlabel('Category')
-# ax.set_ylabel('Count')
-# ax.set_title('Number of Products in Each Category (Bubble Chart)')
-# ax.set_xticks(category_counts.index)
-# ax.set_xticklabels(category_counts.index, rotation=45)
-# plt.tight_layout()
-# st.pyplot(fig)
       
 st.sidebar.header("Select the option :")
 
@@ -48,6 +32,7 @@ with st.sidebar:
 def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
+    st.write("Visualisasi Dataset :")
     
     # Bar Chart
     category_counts = Data['primary_category'].value_counts()

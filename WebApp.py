@@ -20,6 +20,7 @@ def Category(Data,n):
     
     with col4:
             eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())
+    return Data,n
     
 #     if item != 'all':
 #         df = df.loc[df.item == int(item)]

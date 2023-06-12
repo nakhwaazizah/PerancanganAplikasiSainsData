@@ -49,7 +49,7 @@ def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
     st.write("The Visualization :"
-    print(bubblechart)
+    bubblechart
     
     filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:

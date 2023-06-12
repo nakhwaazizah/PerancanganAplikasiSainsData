@@ -59,7 +59,7 @@ def main():
         st.write(filtered_data[['product_name']])
         st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text']])
     else:
-        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
+        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
             
 
 if __name__ == "__main__":

@@ -33,7 +33,10 @@ plt.ylabel('Count')
 plt.title('Number of Products in Each Category (Bubble Chart)')
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.show
+plt.show()
+
+col1 = st.columns(1)
+col1.subheader('visualization')
 
       
 # Dashboard

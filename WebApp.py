@@ -1,9 +1,4 @@
-import streamlit as st 
-import pandas as pd 
-import numpy as np 
-import plotly.express as px
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel
+from library import *
 
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/Results%20dataset%20Sephora.csv'
 Data = pd.read_csv(url)

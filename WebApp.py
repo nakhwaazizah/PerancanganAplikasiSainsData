@@ -7,32 +7,6 @@ from sklearn.metrics.pairwise import linear_kernel
 
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
-        
-# def Category(Data,n):
-#       col1,col2,col3,col4 = st.columns(4)
-    
-#     with col1:
-#             kategori = st.selectbox('Product Category', Data['secondary_category'].unique())
-    
-#     with col2:
-#             skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique())
-      
-#     with col3:
-#             type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
-    
-#     with col4:
-#             eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())
-#     return Data,n
-    
-#     if item != 'all':
-#         df = df.loc[df.item == int(item)]
-        
-#     if store != 'all':
-#         df = df.loc[df.store == int(store)]
-    
-#     df = df.drop(['store','item'], axis=1)
-   
-#     return df, n
 
 with st.sidebar:
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
@@ -44,8 +18,6 @@ with st.sidebar:
       Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
         
 filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
-# fig = px.scatter(data_frame=Data,x=Category, y=Skin, size =Type,Eye=Color,log_x=True,log_y=True,size_max=Circle_area)
-# st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
 # Dashboard
 def main():

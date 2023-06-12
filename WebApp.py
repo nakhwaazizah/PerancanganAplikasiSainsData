@@ -22,7 +22,7 @@ st.set_page_config(page_title = title,
 st.sidebar.header("Select the option :")
 
 with st.sidebar:          
-      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
+      Category = st.selectbox('Category', Data['secondary_category'].unique())
       
       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       

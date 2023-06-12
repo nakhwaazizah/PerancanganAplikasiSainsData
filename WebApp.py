@@ -48,7 +48,8 @@ with st.sidebar:
 def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
-    st.write("The Visualization :"
+    st.write("The Visualization :")
+    bubble chart
     
     filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:

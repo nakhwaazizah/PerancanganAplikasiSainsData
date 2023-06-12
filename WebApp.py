@@ -34,9 +34,9 @@ plt.title('Number of Products in Each Category (Bubble Chart)')
 plt.xticks(rotation=45)
 plt.tight_layout()
 
-col = st.columns(1)     
+col1 = st.columns(1)     
 with col:
-            item = plt.show()
+            item = print('hai')
       
 # Dashboard
 def main():

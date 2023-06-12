@@ -30,7 +30,7 @@ def main():
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
             
     # Count the number of products in each category
-    category_counts = data['primary_category'].value_counts()
+    category_counts = Data['primary_category'].value_counts()
 
       # Create a color map for each category
     colors = plt.cm.get_cmap('tab20c', len(category_counts))
@@ -45,7 +45,7 @@ def main():
     plt.tight_layout()
 
 # Display the plot
-plt.show()
+      plt.show()
             
 
 if __name__ == "__main__":

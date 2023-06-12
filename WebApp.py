@@ -15,7 +15,7 @@ with st.sidebar:
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-filtered_data = data[(data['secondary_category'] == category) & (data['skin_tone'] == skin_tone) & (data['skin_type'] == skin_type)]
+filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
 
 # Dashboard
 def main():

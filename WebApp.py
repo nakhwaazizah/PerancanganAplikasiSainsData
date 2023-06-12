@@ -12,26 +12,18 @@ Data = pd.read_csv(url)
 title = "Beauty Things"
 subtitle = "Let's find skincare for you!"
 
+subtitle = 'Buble Chart Number of products per category visualization'
+
 st.set_page_config(page_title = title,
                    page_icon = None,
                    layout = "wide")
 
 # st.title(title)
 # st.caption(subtitle)
-      
-st.sidebar.header("Select the option :")
 
-with st.sidebar:          
-      Category = st.selectbox('Category', Data['secondary_category'].unique())
-      
-      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
-      
-      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
-    
-# Count the number of products in each category
+# Bar Chart
 category_counts = Data['primary_category'].value_counts()
 
-# Create a color map for each category
 colors = plt.cm.get_cmap('tab20c', len(category_counts))
 
 # Create the bubble chart
@@ -43,10 +35,16 @@ ax.set_title('Number of Products in Each Category (Bubble Chart)')
 ax.set_xticks(category_counts.index)
 ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
+st.pyplot(fig)
+      
+st.sidebar.header("Select the option :")
 
-# Display the plot in Streamlit
-
-
+with st.sidebar:          
+      Category = st.selectbox('Category', Data['secondary_category'].unique())
+      
+      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
+      
+      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
 # Dashboard
 def main():
@@ -59,7 +57,7 @@ def main():
         st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
-    st.pyplot(fig)
+    
             
 
 if __name__ == "__main__":

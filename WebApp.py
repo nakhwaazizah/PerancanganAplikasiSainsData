@@ -61,7 +61,7 @@ def main():
 #     filtered_data
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
-        st.write(filtered_data[['product_name']][0])
+        st.write(filtered_data[['product_name']].values[0])
         st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text'][0]])
     else:
         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   

@@ -16,7 +16,7 @@ def Category(Data,n):
             skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique())
       
     with col3:
-            Type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
+            type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
     
     with col4:
             eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())

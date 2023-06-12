@@ -9,7 +9,7 @@ data = pd.read_csv(url)
 
 # Split the dataset into training and testing sets
 X = data['review_text']
-y = data['target_variable']
+y = data['product_name']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Create TF-IDF vectorizer

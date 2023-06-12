@@ -33,7 +33,7 @@ ax.set_title('Number of Products in Each Category (Bubble Chart)')
 ax.set_xticks(category_counts.index)
 ax.set_xticklabels(category_counts.index, rotation=45)
 plt.tight_layout()
-# st.pyplot(fig)
+bubble chart = st.pyplot(fig)
       
 st.sidebar.header("Select the option :")
 
@@ -49,7 +49,7 @@ def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
     st.write("The Visualization :"
-    st.pyplot(fig)
+    print(bubblechart)
     
     filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
     if len(filtered_data) > 0:

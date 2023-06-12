@@ -9,7 +9,7 @@ Data = pd.read_csv(url)
 
 
 with st.sidebar:
-      st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
+      st.set_page_config(page_title='main.py', page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
                    
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       

@@ -9,6 +9,7 @@ import re
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
 
+
 clean_spcl = re.compile('[/(){}\[\]\|@,;]')
 clean_symbol = re.compile('[^0-9a-z #+_]')
 stopworda = set(stopwords.words('english'))

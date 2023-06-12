@@ -19,19 +19,7 @@ with st.sidebar:
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-# Dashboard
-def main():
-    st.title("Beauty Things")
-    st.write("Let's find skincare for you!")
-    
-    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
-    if len(filtered_data) > 0:
-        st.write("Hasil Pencarian:")
-        st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
-    else:
-        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
-            
-    # Count the number of products in each category
+ # Count the number of products in each category
     category_counts = Data['primary_category'].value_counts()
 
       # Create a color map for each category
@@ -46,8 +34,21 @@ def main():
     plt.xticks(rotation=45)
     plt.tight_layout()
 
-# Display the plot
-    plt.show()
+col = st.columns(1)     
+with col:
+            item = plt.show()
+      
+# Dashboard
+def main():
+    st.title("Beauty Things")
+    st.write("Let's find skincare for you!")
+    
+    filtered_data = Data[(Data['secondary_category'] == Category) & (Data['skin_tone'] == Skin) & (Data['skin_type'] == Type)]
+    if len(filtered_data) > 0:
+        st.write("Hasil Pencarian:")
+        st.table(filtered_data[['product_name', 'brand_name', 'review_title', 'loves_count', 'price_usd', 'review_text']])
+    else:
+        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")
             
 
 if __name__ == "__main__":

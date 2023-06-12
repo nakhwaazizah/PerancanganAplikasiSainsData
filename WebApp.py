@@ -6,17 +6,55 @@ import plotly.express as px
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/PreprocessingDatasetSephora.csv'
 Data = pd.read_csv(url)
 
-with st.sidebar:
-      Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
+def Category(Data,n):
+      col1,col2,col3,col4 = st.columns(4)
+    
+    with col1:
+            kategori = st.selectbox('Product Category', Data['secondary_category'].unique())
+    
+    with col2:
+            skin = st.selectbox('Your Skin Tone', Data['skin_tone'].unique()))
       
-      Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
-      
-      Type = st.selectbox('Skin Type', Data['skin_type'].unique())
-      
-      Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
+    with col3:
+            Type = st.selectbox('Your Skin Type', Data['skin_type'].unique())
+    
+    with col4:
+            eye = st.selectbox('Your Eye Color', Data['eye_color'].unique())
+    
+#     if item != 'all':
+#         df = df.loc[df.item == int(item)]
         
-        
-fig = px.scatter(data_frame=Data,x=Category, y=Skin, size =Type,Eye=Color,log_x=True,log_y=True,size_max=Circle_area)
+#     if store != 'all':
+#         df = df.loc[df.store == int(store)]
+    
+#     df = df.drop(['store','item'], axis=1)
+   
+#     return df, n
 
-st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+# with st.sidebar:
+#       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
+      
+#       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
+      
+#       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
+      
+#       Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
+        
+        
+# fig = px.scatter(data_frame=Data,x=Category, y=Skin, size =Type,Eye=Color,log_x=True,log_y=True,size_max=Circle_area)
+# st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+
+# Dashboard
+def main():
+    # Halaman Utama (Home)
+    st.title("Beauty Things")
+    st.write("Let's find skincare for you!")
+
+    Data = read_File()
+    n=0
+    Data,n = Category(Data,n)
+
+if __name__ == "__main__":
+    main()
+
 

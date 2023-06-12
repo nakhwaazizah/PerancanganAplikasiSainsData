@@ -51,18 +51,20 @@ def main():
     plt.tight_layout()
     st.pyplot(fig)
     
-    st.dataframe(Data)
-    filtered_data = Data.loc[Data.secondary_category] == Category
-    filtered_data = Data.loc[Data.skin_tone] == Skin
-    filtered_data = Data.loc[Data.skin_type] == Type
+#     st.dataframe(Data)
+#     filtered_data = Data.loc[Data.secondary_category] == Category
+#     filtered_data = Data.loc[Data.skin_tone] == Skin
+#     filtered_data = Data.loc[Data.skin_type] == Type
     
-    filtered_data
-#     if len(filtered_data) > 0:
-#         st.write("Hasil Pencarian:")
-#         st.write(filtered_data[['product_name']])
-#         st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text']])
-#     else:
-#         st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
+    filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
+    
+#     filtered_data
+    if len(filtered_data) > 0:
+        st.write("Hasil Pencarian:")
+        st.write(filtered_data[['product_name']])
+        st.table(filtered_data[['product_name', 'brand_name', 'loves_count', 'price_usd', 'review_title', 'review_text'][0]])
+    else:
+        st.write("Maaf, tidak ada produk yang cocok dengan pilihan Anda.")   
             
 
 if __name__ == "__main__":

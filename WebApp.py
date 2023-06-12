@@ -30,7 +30,7 @@ def main():
     # Halaman Utama (Home)
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
-    filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
+#     filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
 
 # # Jika ada produk yang cocok dengan pilihan pengguna
 # if not filtered_data.empty:

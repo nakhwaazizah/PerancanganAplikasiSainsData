@@ -16,8 +16,8 @@ st.set_page_config(page_title = title,
                    page_icon = None,
                    layout = "wide")
 
-st.title(title)
-st.caption(subtitle)
+# st.title(title)
+# st.caption(subtitle)
       
 st.sidebar.header("Select the option :")
 

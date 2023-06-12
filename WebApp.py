@@ -15,13 +15,13 @@ with st.sidebar:
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
 
 # Dashboard
 def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
-
+    
+    filtered_data = Data[(Data['secondary_category'] == category) & (Data['skin_tone'] == skin_tone) & (Data['skin_type'] == skin_type)]
     if len(filtered_data) > 0:
         st.write("Hasil Pencarian:")
         st.table(filtered_data[['product_name', 'brand', 'description']])

@@ -8,7 +8,7 @@ url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/Results%20dat
 Data = pd.read_csv(url)
 
 with st.sidebar:
-      my_component(greeting='Hello')
+      st.[helo]
                    
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       

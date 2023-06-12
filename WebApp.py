@@ -9,16 +9,25 @@ import matplotlib.pyplot as plt
 url = 'https://raw.githubusercontent.com/nakhwaazizah/Sephora/main/Results%20dataset%20Sephora.csv'
 Data = pd.read_csv(url)
 
+title = "Beauty Things"
+subtitle = "Let's find skincare for you!"
 
-with st.sidebar:
-      st.set_page_config(page_title='Main.py', page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
-                   
+st.set_page_config(page_title = title,
+                   page_icon = None,
+                   layout = "wide")
+
+st.title(judul)
+st.caption(sub)
+      
+st.sidebar.header("Select the option :")
+
+with st.sidebar:          
       Category = st.selectbox('Skincare Category', Data['secondary_category'].unique())
       
       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
-      
+    
  # Count the number of products in each category
 category_counts = Data['primary_category'].value_counts()
 

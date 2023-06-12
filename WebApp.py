@@ -17,7 +17,7 @@ with st.sidebar:
       
       Eye = st.selectbox('Eye Color', Data['eye_color'].unique())
         
-filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
+# filtered_data = [data(data[primary_category] == selected_primary_category) & data(data['secondary_category'] == selected_secondary_category) & data(data['skin_type'] == selected_skin_type) & (data['skin_tone'] == selected_skin_tone)]
 
 # Dashboard
 def main():

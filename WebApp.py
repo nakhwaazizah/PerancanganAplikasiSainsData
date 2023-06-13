@@ -100,7 +100,7 @@ def main():
     
     Rproduct, Rreview, Rrating = recommendations(Product)
 
-    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
+    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview, 'Rating': Rrating}))
 
     st.table(Rprint)
     

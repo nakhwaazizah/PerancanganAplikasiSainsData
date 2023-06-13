@@ -104,6 +104,13 @@ def main():
 
     st.table(Rprint)
     
+    # Mengambil daftar produk asli
+    actual_data = filtered_data['product_name'].unique()
+
+    # Menghitung akurasi
+    accuracy = calculate_accuracy(actual_data, Rproduct)
+    st.write(f"Accuracy: {accuracy:.2%}")
+    
             
 
 if __name__ == "__main__":

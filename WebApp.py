@@ -39,6 +39,17 @@ def clean_text(text):
     text = ' '.join(word for word in text.split() if word not in stopworda) # hapus stopword dari kolom deskripsi
     return text
   
+def calculate_accuracy(actual_data, recommended_data):
+    correct_predictions = 0
+    total_predictions = len(recommended_data)
+
+    for i in range(total_predictions):
+        if recommended_data[i] in actual_data:
+            correct_predictions += 1
+
+    accuracy = correct_predictions / total_predictions
+    return accuracy
+
 def main():
     st.title("Beauty Things")
     st.write("Let's find skincare for you!")
@@ -92,6 +103,12 @@ def main():
     Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
 
     st.table(Rprint)
+    
+    actual_ratings = filtered_data.loc[filtered_data.product_name == Product].rating.tolist()
+    accuracy = calculate_accuracy(actual_ratings, Rrating)
+
+    st.write("Accuracy:", accuracy)  # Tampilkan akurasi di aplikasi Streamlit
+#     st.table(Rprint)
             
 
 if __name__ == "__main__":

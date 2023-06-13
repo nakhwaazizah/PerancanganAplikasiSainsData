@@ -98,17 +98,12 @@ def main():
             recommendedProductsreview.append(list(Data.review_text)[i])
         return recommendedProducts, recommendedProductsreview
     
-    Rproduct, Rreview, Rrating = recommendations(Product)
+    Rproduct, Rreview = recommendations(Product)
 
-    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview, 'Rating': Rrating}))
+    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
 
     st.table(Rprint)
     
-    actual_ratings = filtered_data.loc[filtered_data.product_name == Product].rating.tolist()
-    accuracy = calculate_accuracy(actual_ratings, Rrating)
-
-    st.write("Accuracy:", accuracy)  # Tampilkan akurasi di aplikasi Streamlit
-#     st.table(Rprint)
             
 
 if __name__ == "__main__":

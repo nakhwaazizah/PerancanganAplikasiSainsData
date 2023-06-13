@@ -29,7 +29,7 @@ with st.sidebar:
       Skin = st.selectbox('Skin Tone', Data['skin_tone'].unique())
       Type = st.selectbox('Skin Type', Data['skin_type'].unique())
       
-def clean_text(text):
+def clean_text(text): 
     text = text.lower() # lowercase text
     text = clean_spcl.sub(' ', text)
     text = clean_symbol.sub('', text)

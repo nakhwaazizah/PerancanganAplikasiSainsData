@@ -43,7 +43,7 @@ def main():
     st.write("Dataset Visualization :")
     
     # Bubble Chart
-    category_counts = Data['primary_category'].value_counts()
+    category_counts = Data['secondary_category'].value_counts()
     colors = plt.cm.get_cmap('tab20c', len(category_counts))
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.scatter(category_counts.index, category_counts.values, s=category_counts.values*10, c=colors(range(len(category_counts))), alpha=0.7)

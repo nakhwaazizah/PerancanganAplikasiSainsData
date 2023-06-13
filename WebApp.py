@@ -73,14 +73,20 @@ def main():
     
     def recommendations(name, cos_sim = cos_sim):
         recommendedProducts = []
+        recommendedProductsreview = []
         idx =indices[indices == name].index[0]
         score = pd.Series(cos_sim[idx]).sort_values(ascending = False)
         top_10 = list(score.iloc[1:11].index)
         for i in top_10:
             recommendedProducts.append(list(Data.index)[i])
-        return recommendedProducts
+            recommendedProductsreview.append(list(Data.review_text)[i])
+        return recommendedProducts, recommendedProductsreview
     
-    st.table(recommendations(Product))  
+    Rproduct, Rreview = recommendations(Product)
+
+    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
+
+    st.table(Rprint)
             
 
 if __name__ == "__main__":

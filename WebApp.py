@@ -60,6 +60,7 @@ def main():
     filtered_data = filtered_data.loc[filtered_data.skin_type == Type]
     
     Product = st.selectbox('Product Name', filtered_data['product_name'].unique())
+    st.write(filtered_data[filtered_data.product_name == Product].review_text)
     st.write('Other Recommendations :')
     
     Data['review_clean'] = Data['review_text'].apply(clean_text)

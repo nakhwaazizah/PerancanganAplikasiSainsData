@@ -80,7 +80,7 @@ def main():
             recommendedProducts.append(list(Data.index)[i])
         return recommendedProducts
     
-    st.write(recommendations(Product))  
+    st.table(recommendations(Product))  
             
 
 if __name__ == "__main__":

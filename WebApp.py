@@ -39,16 +39,6 @@ def clean_text(text):
     text = ' '.join(word for word in text.split() if word not in stopworda) # hapus stopword dari kolom deskripsi
     return text
   
-def calculate_accuracy(actual_data, Product):
-    correct_predictions = 0
-    total_predictions = len(Product)
-
-    for i in range(total_predictions):
-        if Product[i] in actual_data:
-            correct_predictions += 1
-
-    accuracy = correct_predictions / total_predictions
-    return accuracy
 
 def main():
     st.title("Beauty Things")
@@ -96,20 +86,13 @@ def main():
         for i in top_10:
             recommendedProducts.append(list(Data.index)[i])
             recommendedProductsreview.append(list(Data.review_text)[i])
-        return recommendedProducts, recommendedProductsreview
+        return recommendedProducts, recommendedProductsreview, score
     
-    Rproduct, Rreview = recommendations(Product)
+    Rproduct, Rreview, score = recommendations(Product)
 
-    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
+    Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview, 'Similarity Score':list(score.iloc[1:11])}))
 
     st.table(Rprint)
-    
-    # Mengambil daftar produk asli
-    actual_data = filtered_data['product_name'].unique()
-
-    # Menghitung akurasi
-    accuracy = calculate_accuracy(actual_data, Product)
-    st.write(f"Accuracy: {accuracy:.2%}")
     
             
 

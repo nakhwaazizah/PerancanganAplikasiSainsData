@@ -77,7 +77,7 @@ def main():
         score = pd.Series(cos_sim[idx]).sort_values(ascending = False)
         top_10 = list(score.iloc[1:11].index)
         for i in top_10:
-            recommendedProducts.append(list(data.index)[i])
+            recommendedProducts.append(list(Data.index)[i])
         return recommendedProducts
     
     st.write(recommendations(Product))  

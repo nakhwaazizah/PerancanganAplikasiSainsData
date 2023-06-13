@@ -98,7 +98,7 @@ def main():
             recommendedProductsreview.append(list(Data.review_text)[i])
         return recommendedProducts, recommendedProductsreview
     
-    Rproduct, Rreview = recommendations(Product)
+    Rproduct, Rreview, Rrating = recommendations(Product)
 
     Rprint = pd.DataFrame(({'Product': Rproduct,'Review': Rreview}))
 

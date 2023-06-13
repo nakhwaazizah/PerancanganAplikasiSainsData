@@ -108,7 +108,7 @@ def main():
     actual_data = Data['product_name'].unique()
 
     # Menghitung akurasi
-    accuracy = calculate_accuracy(actual_data, Rproduct)
+    accuracy = calculate_accuracy(actual_data, Product)
     st.write(f"Accuracy: {accuracy:.2%}")
     
             

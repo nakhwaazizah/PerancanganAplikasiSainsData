@@ -1,6 +1,5 @@
 # Perancangan Aplikasi Sains Data
 S1 Data Sains 
-Fakultas Informatika
 Telkom University
 
 ## Aplikasi Beauty Things

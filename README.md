@@ -2,7 +2,13 @@
 S1 Data Sains 
 Telkom University
 
-## Aplikasi Beauty Things
+### Kelompok 6
+- Syifa Putri Fadhilla
+- Rosalie Naurah Husna
+- Nakhwa Azizah
 
-### Link Aplikasi Streamlit
+### Aplikasi Beauty Things
+Sephora Products and Skincare Reviews
+
+#### Link Aplikasi Streamlit
 https://nakhwaazizah-sephora-webapp-fg48b3.streamlit.app/
